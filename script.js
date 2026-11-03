@@ -1,14 +1,13 @@
 // ---------- Seitenwechsel über das Menü ----------
 
-// Zeigt nur den Bereich, dessen Name im Link (#name) steht
+// Startseite ist "home". Wer einen Link mit # anklickt, sieht den passenden Bereich.
 function zeigeSeite() {
-    const name = location.hash.slice(1) || "galerie";
+    const name = location.hash.slice(1) || "home";
     document.querySelectorAll(".seite").forEach(function (seite) {
         seite.classList.toggle("aktiv", seite.id === name);
     });
 }
 
-// Läuft beim Laden der Seite und bei jedem Klick auf einen Menüpunkt
 window.addEventListener("hashchange", zeigeSeite);
 zeigeSeite();
 
