@@ -1,0 +1,178 @@
+:root {
+    --farbe-text: #e8edf2;
+    --farbe-akzent: #9bc1e6;
+    --schatten: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background:
+        radial-gradient(ellipse at top, rgba(120, 140, 170, 0.25), transparent 60%),
+        linear-gradient(180deg, #2a2f38 0%, #14171c 100%);
+    color: var(--farbe-text);
+    line-height: 1.6;
+}
+
+h1 {
+    text-align: center;
+    color: var(--farbe-akzent);
+    font-size: 2.5rem;
+    margin: 0;
+    padding: 40px 20px 10px;
+}
+
+.menue {
+    text-align: center;
+    padding: 20px;
+}
+
+.menue a {
+    margin: 0 15px;
+    color: var(--farbe-akzent);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.menue a:hover {
+    text-decoration: underline;
+}
+
+.seite {
+    display: none;
+}
+
+.seite.aktiv {
+    display: block;
+}
+
+#willkommen {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 0 0 30px;
+}
+
+h2 {
+    text-align: center;
+    color: var(--farbe-akzent);
+    margin: 40px 0 20px;
+}
+
+.galerie {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: var(--schatten);
+    cursor: zoom-in;
+    transition: transform 0.3s, opacity 0.3s;
+    display: block;
+}
+
+img:hover {
+    transform: scale(1.03);
+    opacity: 0.9;
+}
+
+#Schreiben,
+#kontakt-link {
+    text-align: center;
+}
+
+#kontakt-link a {
+    color: var(--farbe-akzent);
+    font-weight: bold;
+}
+
+#impressum {
+    text-align: left;
+    color: #aab4c0;
+    font-size: 0.9rem;
+    max-width: 1000px;
+    margin: 40px auto 20px;
+    padding: 0 20px;
+}
+
+.vorschau {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 100;
+}
+
+.vorschau.offen {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.vorschau img {
+    width: auto;
+    height: auto;
+    max-width: 90vw;
+    max-height: 90vh;
+    margin: 0;
+    box-shadow: none;
+    cursor: default;
+}
+
+.vorschau img:hover {
+    transform: none;
+}
+
+.vorschau button {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.vorschau button:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.schliessen {
+    top: 20px;
+    right: 20px;
+}
+
+.zurueck {
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.weiter {
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.zaehler {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    margin: 0;
+    text-align: center;
+    color: #fff;
+}
